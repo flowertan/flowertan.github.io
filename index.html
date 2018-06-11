@@ -317,7 +317,7 @@
                 
               
 
-              <time title="Created: 2018-06-11 20:00:03 / Modified: 21:06:04" itemprop="dateCreated datePublished" datetime="2018-06-11T20:00:03+08:00">2018-06-11</time>
+              <time title="Created: 2018-06-11 20:00:03 / Modified: 22:32:36" itemprop="dateCreated datePublished" datetime="2018-06-11T20:00:03+08:00">2018-06-11</time>
             
 
             
@@ -379,22 +379,22 @@
 <h4 id="新建一个Django工程"><a href="#新建一个Django工程" class="headerlink" title="新建一个Django工程"></a>新建一个Django工程</h4><p>准备条件当然是你的Django环境已经搭建好，安装好python环境后，通过pip安装Django，安装mysql，我是在MAC下进行开发的，MAC下安装软件的方法，不得不说homebrew是个很好用的东西，安装软件非常方便。我是参考如下两篇文章在MAC下成功安装MySQL的，链接如下：</p>
 <p>pycharm对于开发来说，也是一个不可多得的工具，我们应该善于利用工具，可以为我们省下不少事情，打开pycharm, 新建工程，选择Django模版，即可以成功创建一个Django工程，然后，通过Tools 下面的Run manage.py Task    启动命令行，这里可以新建Django的app应用，至于django工程下的各个文件目录以及配置，在这里就不再赘述，只要自己新建一个工程下来，敲一个例子，就会对各个文件的作用有所了解。</p>
 <h4 id="将静态网页通过Django渲染出来"><a href="#将静态网页通过Django渲染出来" class="headerlink" title="将静态网页通过Django渲染出来"></a>将静态网页通过Django渲染出来</h4><p>首先，Django默认的数据是sqlite，我们在新建的Django工程目录下的「setting.py」下修改「DATABASES」这一选项</p>
-<p><img src="/Users/flower/Desktop/屏幕快照 2018-06-11 20.36.42.png" alt="屏幕快照 2018-06-11 20.36.42"></p>
+<p><img src="https://i.loli.net/2018/06/11/5b1e804e2e3ec.png" alt=""></p>
 <p>数据库是通过navicat可视化界面创建的，下载navicat后的激活过程可以参考链接</p>
 <p>[]: <a href="https://github.com/DoubleLabyrinth/navicat-keygen/tree/mac" target="_blank" rel="noopener">https://github.com/DoubleLabyrinth/navicat-keygen/tree/mac</a></p>
 <p>将这里配置好之后，同样运行Run manage.py Task，我在这里碰到了错误，工具的提示还是很明显的，提示我没有安装mysqlclient，我安装了pymysql，后来网上找了一篇文章，官方说Django的链接mysql 数据库，最好还是用mysqlclient。运行没有报错后，输入「makemigrations」，接着输入「migrate」，然后回到创建的数据库中，进行刷新，会发现Django给我们默认创建了一些数据表。其实，渲染一个静态页面不需要用到数据库，这是为后面要做的事情做准备。</p>
 <p>在Django的工程目录中，我们可以清楚的看到一些框架，每一块是用来干什么的，templates是用来存放网页文件的，也就是最中我们需要渲染出来的网页。我们可以新建一个static文件夹，用来存放前端的CSS文件，接着我们编写我们所创建的app目录下的「views.py」文件，通过「render」将网页渲染出来。</p>
-<p><img src="/Users/flower/Desktop/屏幕快照 2018-06-11 20.50.45.png" alt="屏幕快照 2018-06-11 20.50.45"></p>
+<p><img src="https://i.loli.net/2018/06/11/5b1e804db24b0.png" alt=""></p>
 <p>那么到底Django是如何显示我们的网页的，是怎么知道要显示哪一个网页的呢，这里就得配置我们的「urls.py」文件了</p>
-<p><img src="/Users/flower/Desktop/屏幕快照 2018-06-11 20.53.52.png" alt="屏幕快照 2018-06-11 20.53.52"></p>
+<p><img src="https://i.loli.net/2018/06/11/5b1e804f313a3.png" alt=""></p>
 <p>就是这样，将我们写的接口添加到如图所示中，然后通过访问127.0.0.1:8000/form/就可以看到我们需要展示的网页了。</p>
 <p>这里还要注意配置「settings.py」中配置我们的templates以及static路径</p>
-<p><img src="/Users/flower/Desktop/屏幕快照 2018-06-11 20.57.52.png" alt="屏幕快照 2018-06-11 20.57.52"></p>
+<p><img src="https://i.loli.net/2018/06/11/5b1e806b220cf.png" alt=""></p>
 <p>上图中将「DIRS」配置成绝对路径</p>
-<p><img src="/Users/flower/Desktop/屏幕快照 2018-06-11 21.00.20.png" alt="屏幕快照 2018-06-11 21.00.20"></p>
+<p><img src="https://i.loli.net/2018/06/11/5b1e806abebd9.png" alt=""></p>
 <p>这里同样添加static的绝对路径。</p>
 <p>经过以上步骤，就可以通过Django成功渲染出一个静态网页了，效果如下:</p>
-<p><img src="/Users/flower/Desktop/屏幕快照 2018-06-11 21.04.15.png" alt="屏幕快照 2018-06-11 21.04.15"></p>
+<p><img src="https://i.loli.net/2018/06/11/5b1e806b859d7.png" alt=""></p>
 <p>以上，就是今天的总结，虽然，进度很慢，但是，我相信，每天坚持，肯定会有收获的。</p>
 
           
