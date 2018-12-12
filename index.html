@@ -271,6 +271,178 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/12/HTML之常用标签/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="flowertan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Flower's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/12/HTML之常用标签/" itemprop="url">
+                  HTML之常用标签
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-12-12 22:16:49 / Modified: 23:54:00" itemprop="dateCreated datePublished" datetime="2018-12-12T22:16:49+08:00">2018-12-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天，来聊一下HTML的常用标签，HTML的标签有很多，都要记下来是一件很困难的事情。只有在用的过程中去慢慢记忆，用的多了，自然就记住了。不熟悉的时候可以到「w3cschool」上查询。</p>
+<p><a href="https://www.w3schools.com/tags/default.asp" target="_blank" rel="noopener"></a></p>
+<p>下面分别说一下「HTML」的常用标签</p>
+<h2 id="div"><a href="#div" class="headerlink" title="div"></a>div</h2><p>「div」标签用于组合其他HTML元素，本身没有实际意义。常用于页面的布局。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div id = &quot;wrap-container&quot;&gt;</span><br><span class="line">		&lt;div id = &quot;collapsed-container&quot;&gt;&lt;/div&gt;</span><br><span class="line">		&lt;div id = &quot;expanded-container&quot;&gt;&lt;/div&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="h1-h6-p-span-strong-em…"><a href="#h1-h6-p-span-strong-em…" class="headerlink" title="h1~h6,p,span,strong,em…"></a>h1~h6,p,span,strong,em…</h2><p>这一类标签用于设置文本，设置文本的标题啦，填充段落啦，用法简单</p>
+<h2 id="ul-li-ol-dl-dt-dd"><a href="#ul-li-ol-dl-dt-dd" class="headerlink" title="ul,li,ol,dl,dt,dd"></a>ul,li,ol,dl,dt,dd</h2><p>这一类标签用于设置带有列表内容的，比如导航栏的下拉菜单，多视频的缩略图等</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul class=&quot;nav-tools-list&quot;&gt;</span><br><span class="line">    &lt;li&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;img src=&quot;shoppingtools-icon-1.png&quot; alt=&quot;&quot;&gt;</span><br><span class="line">            &lt;span&gt;Build &amp; Price&lt;/span&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">    &lt;li&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;img src=&quot;shoppingtools-icon-2.png&quot; alt=&quot;&quot;&gt;</span><br><span class="line">            &lt;span&gt;Incentives &amp; Offers&lt;/span&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">    &lt;li&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;img src=&quot;shoppingtools-icon-3.png&quot; alt=&quot;&quot;&gt;</span><br><span class="line">            &lt;span&gt;Request a Local Quote&lt;/span&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">    &lt;li&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;img src=&quot;shoppingtools-icon-4.png&quot; alt=&quot;&quot;&gt;</span><br><span class="line">            &lt;span&gt;Search Dealer Inventory&lt;/span&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="form表单"><a href="#form表单" class="headerlink" title="form表单"></a>form表单</h2><p>表单一般用于向服务器提交数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;form name=&quot;frm-sample&quot; class=&quot;frm-sample&quot; action=&quot;try&quot; method=&quot;post&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Name&quot;&gt;</span><br><span class="line">    &lt;div id=&quot;status-message&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div id=&quot;sample-captcha&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;a id=&quot;check-is-filled&quot; class=&quot;info-btn&quot;&gt;Check if visualCaptcha is filled&lt;/a&gt;</span><br><span class="line">    &lt;button type=&quot;submit&quot; name=&quot;submit-bt&quot; class=&quot;submit&quot;&gt;Submit form&lt;/button&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="table"><a href="#table" class="headerlink" title="table"></a>table</h2><p>一般页面里面需要建表格的话会用到此标签</p>
+<h2 id="img-canvas"><a href="#img-canvas" class="headerlink" title="img, canvas"></a>img, canvas</h2><p>该标签用于图像显示</p>
+<h2 id="a标签"><a href="#a标签" class="headerlink" title="a标签"></a>a标签</h2><p>a标签用于打开链接，段落跳转等功能</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;html5&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;a name=&quot;user-content-html5&quot; href=&quot;#html5&quot; class=&quot;headeranchor-link&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;headeranchor&quot;&gt;&lt;/span&gt;&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<p>以上列出了一些常用的标签，以后用到别的可以再写篇博客记录。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/29/HTTP是什么？/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1478,7 +1650,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1518,7 +1690,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
