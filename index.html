@@ -271,6 +271,166 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/02/关于计数排序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="flowertan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Flower's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/02/关于计数排序/" itemprop="url">
+                  关于计数排序
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-01-02 21:44:37 / Modified: 22:01:15" itemprop="dateCreated datePublished" datetime="2019-01-02T21:44:37+08:00">2019-01-02</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="计数排序定义"><a href="#计数排序定义" class="headerlink" title="计数排序定义"></a>计数排序定义</h3><p>计数排序利用一个哈希表的结构，这个表结构中的第「i」个元素是待排序数组中值等与「i」的元素个数，然后，根据这个哈希表将数组中的元素排到正确的位置。</p>
+<h3 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">a &lt;- &#123;</span><br><span class="line">    &apos;0&apos;:0,</span><br><span class="line">    &apos;1&apos;:2,</span><br><span class="line">    &apos;2&apos;:1,</span><br><span class="line">    &apos;3&apos;:56,</span><br><span class="line">    &apos;4&apos;:40,</span><br><span class="line">    &apos;5&apos;:66,</span><br><span class="line">    &apos;length&apos;:6</span><br><span class="line">&#125;</span><br><span class="line">hash &lt;- &#123;&#125;</span><br><span class="line">index &lt;- 0</span><br><span class="line">while index &lt; a[&apos;length]</span><br><span class="line">	number &lt;- a[index]</span><br><span class="line">	if hash[number] == undefined</span><br><span class="line">		hash[number] = 1</span><br><span class="line">	else</span><br><span class="line">		hash[number] &lt;- hash[number] + 1</span><br><span class="line">	end</span><br><span class="line">	index &lt;- index + 1</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">index2 &lt;- 0</span><br><span class="line">max &lt;- findMax(a)</span><br><span class="line">newArr &lt;- &#123;&#125;</span><br><span class="line">while index2 &lt; max + 1</span><br><span class="line">	count &lt;- hash[index2]</span><br><span class="line">	if count != undefined</span><br><span class="line">		countIndex &lt;- 0</span><br><span class="line">		while countIndex &lt; count</span><br><span class="line">			newArr.push(index2)</span><br><span class="line">			countIndex &lt;- countIndex + 1</span><br><span class="line">		end</span><br><span class="line">	end</span><br><span class="line">	index2 &lt;- index2 + 1</span><br><span class="line">end</span><br><span class="line">print newArr</span><br></pre></td></tr></table></figure>
+<p>这样遍历循环的时候，对于相差很大的数字，会浪费掉许多空间，时间上比快速排序要快。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/25/CSS的一些布局/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1828,7 +1988,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1872,7 +2032,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
@@ -1912,7 +2074,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
