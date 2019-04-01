@@ -271,6 +271,191 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/01/JS-liJS里的数据类型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="flowertan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Flower's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/01/JS-liJS里的数据类型/" itemprop="url">
+                  JS里的数据类型
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-01 23:53:06" itemprop="dateCreated datePublished" datetime="2019-04-01T23:53:06+08:00">2019-04-01</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-02 00:32:34" itemprop="dateModified" datetime="2019-04-02T00:32:34+08:00">2019-04-02</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>JS里的数据类型，共有6种，在ES6中又增加了第七种类型（Symbol），这里暂不进行讨论。</p>
+<p>这6种类型分别是：数值(number), 字符串(string), 布尔值(boolean), undefined, null, 对象(object).</p>
+<p>通常，数值，字符串，布尔值这三种类型是最基本的数据类型，不能再细分了。对象称之为合成类型的值，undefined和null，一般将这两个看成特殊值。其中，对象是最复杂的类型，又可以分为三个子类型(狭义的对象，数组，函数)</p>
+<p>和C语言不同的是，在JS中，所有数字都是以64位浮点形式储存，即使是整数也不例外，因此，在JS中，「1」和「1.0」是相同的，是同一个数。也就是说，JS语言的底层根本没有整数，所有数字都是小数。</p>
+<p>JS当中的一些运算也和别的语言，譬如C语言也有所不同，一些小数的运算会涉及到精度问题，会使有些表达式的运行结果和C语言是不一致的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">0.1 + 0.2 === 0.3</span><br><span class="line">// false</span><br><span class="line"></span><br><span class="line">0.3 / 0.1</span><br><span class="line">// 2.9999999999999996</span><br><span class="line"></span><br><span class="line">(0.3 - 0.2) === (0.2 - 0.1)</span><br><span class="line">// false</span><br></pre></td></tr></table></figure>
+<p>具体的一些例子，这里就不细细展开，具体可以查阅文档。</p>
+<p>[]: <a href="https://wangdoc.com/javascript/types/number.html" target="_blank" rel="noopener">https://wangdoc.com/javascript/types/number.html</a></p>
+<p>字符串就是零个或多个排在一起的字符，放在单引号或双引号之中。单引号字符串的内部，可以使用双引号。双引号字符串的内部，可以使用单引号。如果要在单引号字符串内部使用单引号，就必须在单引号前面加上反斜杠来进行转义，双引号同理。应注意使用的时候保持同一种风格，便于阅读理解。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&apos;Did she say \&apos;Hello\&apos;?&apos;</span><br><span class="line">// &quot;Did she say &apos;Hello&apos;?&quot;</span><br><span class="line"></span><br><span class="line">&quot;Did she say \&quot;Hello\&quot;?&quot;</span><br><span class="line">// &quot;Did she say &quot;Hello&quot;?&quot;</span><br></pre></td></tr></table></figure>
+<p>对象简单来说，就是一组「键值对」的集合，是一种无序的复合数据集合。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">  foo: &apos;Hello&apos;,</span><br><span class="line">  bar: &apos;World&apos;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>键名可以为数字，会被自动转换为字符串。如果键名不符合标识名的条件，并且不是数字，那么必须加上引号，否则会报错。</p>
+<p>如上面的例子，‘foo’称之为对象的属性，可以进行引用，读取，赋值，查看，删除操作。对象的属性还可以进行遍历。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;a: 1, b: 2, c: 3&#125;;</span><br><span class="line"></span><br><span class="line">for (var i in obj) &#123;</span><br><span class="line">  console.log(&apos;键名：&apos;, i);</span><br><span class="line">  console.log(&apos;键值：&apos;, obj[i]);</span><br><span class="line">&#125;</span><br><span class="line">// 键名： a</span><br><span class="line">// 键值： 1</span><br><span class="line">// 键名： b</span><br><span class="line">// 键值： 2</span><br><span class="line">// 键名： c</span><br><span class="line">// 键值： 3</span><br></pre></td></tr></table></figure>
+<p>JS里的数据类型分为以上6种，每一种涉及的到的细节都有很多。一下子也记不住，只能靠多用，多查，多看，来慢慢熟练。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/02/关于计数排序/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1776,178 +1961,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/17/new-post/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="flowertan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Flower's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/17/new-post/" itemprop="url">
-                  第一篇博客
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-04-17 23:37:25" itemprop="dateCreated datePublished" datetime="2018-04-17T23:37:25+08:00">2018-04-17</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-04-18 00:28:05" itemprop="dateModified" datetime="2018-04-18T00:28:05+08:00">2018-04-18</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="1-首先吐槽一下心情"><a href="#1-首先吐槽一下心情" class="headerlink" title="1.首先吐槽一下心情"></a>1.首先吐槽一下心情</h2><p>本来以为用hexo搭建博客是件很容易的事情，网上这类教程很多，今天无意间在知乎上面看了别人写的帖子，才知道如何修改网站标题，原来是要修改站点的配置文件，而不是去修改主题的配置文件，总之，对于一直从事嵌入式开发的我来说，网站这个东西好多都不明白，好多东西要学，万事开头难，不能产生惧怕心理，而且今天加班回来很晚，心情有点不爽，感觉总在做没有意义的重复工作，需要改正一下自己了。</p>
-<h2 id="2-说说自己碰到的问题"><a href="#2-说说自己碰到的问题" class="headerlink" title="2.说说自己碰到的问题"></a>2.说说自己碰到的问题</h2><p>关于「hexo」怎么去安装的问题：</p>
-<p>需要依赖的工具：git, node.js. </p>
-<p>在「git」命令下输入 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
-<p>最好是自己新建一个单独的文件夹用来单独管理博客，在已经建好的文件夹下面，执行命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-<p>执行完成后会生成一些目录</p>
-<p>说一下 hero 用的比较多的命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo s # 启动 server, 可以本地预览网页</span><br><span class="line">hexo g # 生成静态网页</span><br><span class="line">hexo d # 将生成的静态网页部署到github上</span><br><span class="line">hexo new &quot;new-post&quot; # 生成一篇新的文章</span><br></pre></td></tr></table></figure>
-<p>将「hexo」部署到GitHub上，需要安装自动部署插件，运行以下命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>按照搭建好博客并部署到「GitHub」之后，用的是默认的主题，可以到「hexo」的官网或者知乎上面搜索主题进行替换，刚完成的时候，有一篇默认文章，查阅网上资料说是将其删除，然后执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>然后，问题就来了，再去打开网页就打不开了，说是没有「index.html」文件，后来重新替换了一个「NexT主题，执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-<p>莫名就好了，接着又删除，然后又不行，重新「clone」了一遍主题，还是不行，接着新建了一篇文章，接着再次「clean」了一下，又正常，还是没搞清楚问题出在哪里，后续研究下，感觉要被自己蠢哭了</p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>博客还很简陋，需要修改主题，完善，完善，先写篇博客记录一下自己折腾的过程，总结一下，重要的文件，就是配置文件「-config.yml」</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1988,7 +2008,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2034,7 +2054,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
