@@ -99,25 +99,25 @@
 
 
 
-  <meta name="description" content="计数排序定义计数排序利用一个哈希表的结构，这个表结构中的第「i」个元素是待排序数组中值等与「i」的元素个数，然后，根据这个哈希表将数组中的元素排到正确的位置。 伪代码123456789101112131415161718192021222324252627282930313233343536a &amp;lt;- &amp;#123;    &amp;apos;0&amp;apos;:0,    &amp;apos;1&amp;apos;:2,">
-<meta name="keywords" content="algorithm">
+  <meta name="description" content="原型对象在JS中，每当定义一个对象的时候，对象中都会包含一些预定的属性。其中每个函数对象都有一个「prototype」属性，这个属性指向函数的原型对象。 先看一个例子： 123456789101112131415function Person() &amp;#123;&amp;#125;Person.prototype.name = &amp;apos;Zaxlct&amp;apos;;Person.prototype.age">
+<meta name="keywords" content="JS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于计数排序">
-<meta property="og:url" content="http://yoursite.com/2019/01/02/关于计数排序/index.html">
+<meta property="og:title" content="原型与原型链">
+<meta property="og:url" content="http://yoursite.com/2019/05/16/原型与原型链/index.html">
 <meta property="og:site_name" content="Flower&#39;s Blog">
-<meta property="og:description" content="计数排序定义计数排序利用一个哈希表的结构，这个表结构中的第「i」个元素是待排序数组中值等与「i」的元素个数，然后，根据这个哈希表将数组中的元素排到正确的位置。 伪代码123456789101112131415161718192021222324252627282930313233343536a &amp;lt;- &amp;#123;    &amp;apos;0&amp;apos;:0,    &amp;apos;1&amp;apos;:2,">
+<meta property="og:description" content="原型对象在JS中，每当定义一个对象的时候，对象中都会包含一些预定的属性。其中每个函数对象都有一个「prototype」属性，这个属性指向函数的原型对象。 先看一个例子： 123456789101112131415function Person() &amp;#123;&amp;#125;Person.prototype.name = &amp;apos;Zaxlct&amp;apos;;Person.prototype.age">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-01-02T14:01:15.811Z">
+<meta property="og:updated_time" content="2019-05-16T00:14:34.256Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于计数排序">
-<meta name="twitter:description" content="计数排序定义计数排序利用一个哈希表的结构，这个表结构中的第「i」个元素是待排序数组中值等与「i」的元素个数，然后，根据这个哈希表将数组中的元素排到正确的位置。 伪代码123456789101112131415161718192021222324252627282930313233343536a &amp;lt;- &amp;#123;    &amp;apos;0&amp;apos;:0,    &amp;apos;1&amp;apos;:2,">
+<meta name="twitter:title" content="原型与原型链">
+<meta name="twitter:description" content="原型对象在JS中，每当定义一个对象的时候，对象中都会包含一些预定的属性。其中每个函数对象都有一个「prototype」属性，这个属性指向函数的原型对象。 先看一个例子： 123456789101112131415function Person() &amp;#123;&amp;#125;Person.prototype.name = &amp;apos;Zaxlct&amp;apos;;Person.prototype.age">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/01/02/关于计数排序/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/05/16/原型与原型链/"/>
 
 
 
@@ -127,7 +127,7 @@
   };
 </script>
 
-  <title>关于计数排序 | Flower's Blog</title>
+  <title>原型与原型链 | Flower's Blog</title>
   
 
 
@@ -275,7 +275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/02/关于计数排序/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/原型与原型链/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="flowertan">
@@ -292,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">关于计数排序
+          <h1 class="post-title" itemprop="name headline">原型与原型链
               
             
           </h1>
@@ -317,7 +317,7 @@
                 
               
 
-              <time title="Created: 2019-01-02 21:44:37 / Modified: 22:01:15" itemprop="dateCreated datePublished" datetime="2019-01-02T21:44:37+08:00">2019-01-02</time>
+              <time title="Created: 2019-05-16 07:11:13 / Modified: 08:14:34" itemprop="dateCreated datePublished" datetime="2019-05-16T07:11:13+08:00">2019-05-16</time>
             
 
             
@@ -373,9 +373,17 @@
       
 
       
-        <h3 id="计数排序定义"><a href="#计数排序定义" class="headerlink" title="计数排序定义"></a>计数排序定义</h3><p>计数排序利用一个哈希表的结构，这个表结构中的第「i」个元素是待排序数组中值等与「i」的元素个数，然后，根据这个哈希表将数组中的元素排到正确的位置。</p>
-<h3 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">a &lt;- &#123;</span><br><span class="line">    &apos;0&apos;:0,</span><br><span class="line">    &apos;1&apos;:2,</span><br><span class="line">    &apos;2&apos;:1,</span><br><span class="line">    &apos;3&apos;:56,</span><br><span class="line">    &apos;4&apos;:40,</span><br><span class="line">    &apos;5&apos;:66,</span><br><span class="line">    &apos;length&apos;:6</span><br><span class="line">&#125;</span><br><span class="line">hash &lt;- &#123;&#125;</span><br><span class="line">index &lt;- 0</span><br><span class="line">while index &lt; a[&apos;length]</span><br><span class="line">	number &lt;- a[index]</span><br><span class="line">	if hash[number] == undefined</span><br><span class="line">		hash[number] = 1</span><br><span class="line">	else</span><br><span class="line">		hash[number] &lt;- hash[number] + 1</span><br><span class="line">	end</span><br><span class="line">	index &lt;- index + 1</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">index2 &lt;- 0</span><br><span class="line">max &lt;- findMax(a)</span><br><span class="line">newArr &lt;- &#123;&#125;</span><br><span class="line">while index2 &lt; max + 1</span><br><span class="line">	count &lt;- hash[index2]</span><br><span class="line">	if count != undefined</span><br><span class="line">		countIndex &lt;- 0</span><br><span class="line">		while countIndex &lt; count</span><br><span class="line">			newArr.push(index2)</span><br><span class="line">			countIndex &lt;- countIndex + 1</span><br><span class="line">		end</span><br><span class="line">	end</span><br><span class="line">	index2 &lt;- index2 + 1</span><br><span class="line">end</span><br><span class="line">print newArr</span><br></pre></td></tr></table></figure>
-<p>这样遍历循环的时候，对于相差很大的数字，会浪费掉许多空间，时间上比快速排序要快。</p>
+        <h3 id="原型对象"><a href="#原型对象" class="headerlink" title="原型对象"></a>原型对象</h3><p>在JS中，每当定义一个对象的时候，对象中都会包含一些预定的属性。其中每个函数对象都有一个「prototype」属性，这个属性指向函数的原型对象。</p>
+<p>先看一个例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function Person() &#123;&#125;</span><br><span class="line">Person.prototype.name = &apos;Zaxlct&apos;;</span><br><span class="line">Person.prototype.age  = 28;</span><br><span class="line">Person.prototype.job  = &apos;Software Engineer&apos;;</span><br><span class="line">Person.prototype.sayName = function() &#123;</span><br><span class="line">  alert(this.name);</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line">var person1 = new Person();</span><br><span class="line">person1.sayName(); // &apos;Zaxlct&apos;</span><br><span class="line"></span><br><span class="line">var person2 = new Person();</span><br><span class="line">person2.sayName(); // &apos;Zaxlct&apos;</span><br><span class="line"></span><br><span class="line">console.log(person1.sayName == person2.sayName); //true</span><br></pre></td></tr></table></figure>
+<p>可以将上面的例子改为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Person.prototype = &#123;</span><br><span class="line">   name:  &apos;Zaxlct&apos;,</span><br><span class="line">   age: 28,</span><br><span class="line">   job: &apos;Software Engineer&apos;,</span><br><span class="line">   sayName: function() &#123;</span><br><span class="line">     alert(this.name);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从上面就可以看处原型对象就是「Person.prototype」</p>
+<h3 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h3><p>JS规定，所有对象都有自己的原型对象。一方面，任何一个对象，都可以充当其它对象的原型；另一方面，由于原型对象也是对象，所有它有自己的原型。因此，就会形成一个「原型链」。</p>
+<p>如图所示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![994496-20180423165540308-1640803790.png](https://i.loli.net/2019/05/16/5cdcaaa5be9da67199.png)</span><br></pre></td></tr></table></figure>
+<p>参考链接：</p>
+<p>[]: <a href="https://www.jianshu.com/p/dee9f8b14771" target="_blank" rel="noopener">https://www.jianshu.com/p/dee9f8b14771</a><br>[]: <a href="https://www.cnblogs.com/iceflorence/p/8920025.html" target="_blank" rel="noopener">https://www.cnblogs.com/iceflorence/p/8920025.html</a></p>
 
       
     </div>
@@ -396,7 +404,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/algorithm/" rel="tag"># algorithm</a>
+            <a href="/tags/JS/" rel="tag"># JS</a>
           
         </div>
       
@@ -409,8 +417,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/25/CSS的一些布局/" rel="next" title="CSS的一些使用">
-                <i class="fa fa-chevron-left"></i> CSS的一些使用
+              <a href="/2019/05/06/JS里的数据类型转换/" rel="next" title="JS里的数据类型转换">
+                <i class="fa fa-chevron-left"></i> JS里的数据类型转换
               </a>
             
           </div>
@@ -418,10 +426,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/01/JS-liJS里的数据类型/" rel="prev" title="JS里的数据类型">
-                JS里的数据类型 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -579,7 +583,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#计数排序定义"><span class="nav-number">1.</span> <span class="nav-text">计数排序定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#伪代码"><span class="nav-number">2.</span> <span class="nav-text">伪代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#原型对象"><span class="nav-number">1.</span> <span class="nav-text">原型对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型链"><span class="nav-number">2.</span> <span class="nav-text">原型链</span></a></li></ol></div>
             
 
           </div>
